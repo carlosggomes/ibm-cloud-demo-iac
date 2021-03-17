@@ -86,7 +86,7 @@ resource "ibm_is_instance" "instance1" {
   vpc       = ibm_is_vpc.vpc1.id
   zone      = var.zone1
   keys      = [data.ibm_is_ssh_key.ssh_key_id.id]
-  # user_data = file("nginx.sh")
+  user_data = file("nginx.sh")
 }
 
 resource "ibm_is_security_group_network_interface_attachment" "sgnic1" {
