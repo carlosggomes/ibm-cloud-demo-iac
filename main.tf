@@ -104,6 +104,7 @@ resource "ibm_is_public_gateway" "publicgateway1" {
   name = format ("%s-pgw1", var.name)
   vpc  = ibm_is_vpc.vpc1.id
   zone = var.zone1
+  target = ibm_is_subnet.subnet1.id
 }
 
 data "ibm_is_vpc" "vpc1" {
