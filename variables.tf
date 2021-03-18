@@ -1,8 +1,8 @@
 #TERRAFORM V0.12
 
 # Define Variaveis
-
 variable "ssh_key" {}
+
 # variable "resource_group" {}
 
 variable "name" {}
