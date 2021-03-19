@@ -100,15 +100,15 @@ resource "ibm_is_floating_ip" "floatingip1" {
   target = ibm_is_instance.instance1.primary_network_interface[0].id
 }
 
-resource "ibm_is_public_gateway" "publicgateway1" {
-  name = format ("%s-pgw1", var.name)
-  vpc  = ibm_is_vpc.vpc1.id
-  zone = var.zone1
-}
+# resource "ibm_is_public_gateway" "publicgateway1" {
+#   name = format ("%s-pgw1", var.name)
+#   vpc  = ibm_is_vpc.vpc1.id
+#   zone = var.zone1
+# }
 
-data "ibm_is_vpc" "vpc1" {
-  name = ibm_is_vpc.vpc1.name
-}
+# data "ibm_is_vpc" "vpc1" {
+#   name = ibm_is_vpc.vpc1.name
+# }
 
 # data "ibm_is_volume_profile" "volprofile"{
 #   name = "general-purpose"
