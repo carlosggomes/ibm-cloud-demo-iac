@@ -12,12 +12,14 @@ locals {
 # Cria VPC
 resource "ibm_is_vpc" "vpc1" {
   name = format ("%s-vpc", var.name)
-  resource_group = "5598fcfd528744c9be5824a99742f0a4"
+  # resource_group = "5598fcfd528744c9be5824a99742f0a4" #CP Acount
+  resource_group = "d3e343cee6474bafa4b254a4055ebbfc" #B3 Account Demo
 }
 
 resource "ibm_is_security_group" "sg1" {
   name = format ("%s-sg1", var.name)
-  resource_group = "5598fcfd528744c9be5824a99742f0a4"
+  # resource_group = "5598fcfd528744c9be5824a99742f0a4" #CP Acount
+  resource_group = "d3e343cee6474bafa4b254a4055ebbfc" #B3 Account Demo
   vpc  = ibm_is_vpc.vpc1.id
 }
 
@@ -62,7 +64,8 @@ resource "ibm_is_security_group_rule" "sg1_app_tcp_rule" {
 
 resource "ibm_is_subnet" "subnet1" {
   name            = format ("%s-subnet1", var.name)
-  resource_group = "5598fcfd528744c9be5824a99742f0a4"
+  # resource_group = "5598fcfd528744c9be5824a99742f0a4" #CP Acount
+  resource_group = "d3e343cee6474bafa4b254a4055ebbfc" #B3 Account Demo
   vpc             = ibm_is_vpc.vpc1.id
   zone            = var.zone1
   total_ipv4_address_count = 256
@@ -75,7 +78,8 @@ data ibm_is_ssh_key "ssh_key_id" {
 
 resource "ibm_is_instance" "instance1" {
   name    = format ("%s-server1", var.name)
-  resource_group = "5598fcfd528744c9be5824a99742f0a4"
+  # resource_group = "5598fcfd528744c9be5824a99742f0a4" #CP Acount
+  resource_group = "d3e343cee6474bafa4b254a4055ebbfc" #B3 Account Demo
   image   = var.image
   profile = var.profile
 
@@ -96,7 +100,8 @@ resource "ibm_is_security_group_network_interface_attachment" "sgnic1" {
 
 resource "ibm_is_floating_ip" "floatingip1" {
   name   = format ("%s-fip1", var.name)
-  resource_group = "5598fcfd528744c9be5824a99742f0a4"
+  # resource_group = "5598fcfd528744c9be5824a99742f0a4" #CP Acount
+  resource_group = "d3e343cee6474bafa4b254a4055ebbfc" #B3 Account Demo
   target = ibm_is_instance.instance1.primary_network_interface[0].id
 }
 
