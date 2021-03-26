@@ -23,7 +23,9 @@ SCHEMATICS**
 
 https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs
 https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?locale=en
+
 https://github.com/IBM-Cloud/terraform-provider-ibm/tree/master/examples
+
 
 
 **TERRAFORMS**
